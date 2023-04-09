@@ -44,8 +44,8 @@ public class summary extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					summary frame = new summary();
-					frame.setVisible(true);
+					/*summary frame = new summary("Test");
+					frame.setVisible(true);*/
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -56,7 +56,7 @@ public class summary extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public summary() {
+	public summary(String uEmail) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\91885\\eclipse-workspace\\Bookstore\\src\\views\\logobookstore.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500,180,600,500);
@@ -78,7 +78,7 @@ public class summary extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				new checkout().setVisible(true);
+				new checkout(uEmail).setVisible(true);
 
 			}
 		});
@@ -124,22 +124,21 @@ public class summary extends JFrame {
 	        	model.addRow(data);
 	        	++i;
 	        }
-	            if (i < 1) {
-	                JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
-	            }
-				table.setModel(model);
+	        if (i < 1) {
+	        	JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
+	        }
+			table.setModel(model);
 				
-				btnReturn = new JButton("RETURN");
-				btnReturn.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						dispose();
-						new Cart().setVisible(true);
-					}
-				});
+			btnReturn = new JButton("RETURN");
+			btnReturn.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					dispose();
+					new Cart(uEmail).setVisible(true);
+				}
+			});
 				btnReturn.setFont(new Font("Tahoma", Font.PLAIN, 19));
 				btnReturn.setBounds(351, 422, 140, 31);
 				contentPane.add(btnReturn);
-				
 		}
 		catch(SQLException se) {
 			//Handle errors for JDBC

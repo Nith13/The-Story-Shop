@@ -198,7 +198,7 @@ public class register extends JFrame {
 				new homepage().setVisible(true);
 			}
 		});
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\91885\\eclipse-workspace\\Bookstore\\src\\views\\icons8-home-page-96.png"));
+		lblNewLabel_1.setIcon(null);
 		lblNewLabel_1.setOpaque(true);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 40));

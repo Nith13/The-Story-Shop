@@ -23,6 +23,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 import java.awt.Toolkit;
+import java.awt.event.MouseMotionAdapter;
+import java.awt.event.MouseEvent;
 
 public class Home extends JFrame {
 
@@ -42,7 +44,7 @@ public class Home extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Home frame = new Home();
+					Home frame = new Home("Test");
 					frame.setVisible(true);
 					frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 				} catch (Exception e) {
@@ -55,7 +57,7 @@ public class Home extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Home() {
+	public Home(String uEmail) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\91885\\eclipse-workspace\\Bookstore\\src\\views\\logobookstore.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(1650,1080);
@@ -70,11 +72,17 @@ public class Home extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				new Cart().setVisible(true);
+				new Cart(uEmail).setVisible(true);
 			}
 		});
 		
 		JPanel panel_8 = new JPanel();
+		panel_8.addMouseMotionListener(new MouseMotionAdapter() {
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				panel_8.setBorder(new LineBorder(new Color(255, 0, 0), 3));
+			}
+		});
 		panel_8.setLayout(null);
 		panel_8.setToolTipText("The Subtle Art of Not giving a Fuck");
 		panel_8.setBorder(new LineBorder(new Color(250, 250, 210), 3));
@@ -135,7 +143,7 @@ public class Home extends JFrame {
 					else {
 						JOptionPane.showMessageDialog(contentPane, "You can buy maximum 4 type of books at once");
 						dispose();
-						new Cart().setVisible(true);					
+						new Cart(uEmail).setVisible(true);					
 					}
 				}
 				catch (SQLException sqlException) {
@@ -151,6 +159,12 @@ public class Home extends JFrame {
 		panel_8.add(btnNewButton_2_8);
 		
 		JPanel panel_7 = new JPanel();
+		panel_7.addMouseMotionListener(new MouseMotionAdapter() {
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				panel_7.setBorder(new LineBorder(new Color(128, 255, 0), 3));
+			}
+		});
 		panel_7.setLayout(null);
 		panel_7.setToolTipText("Atomic Habits");
 		panel_7.setBorder(new LineBorder(new Color(250, 250, 210), 3));
@@ -211,7 +225,7 @@ public class Home extends JFrame {
 					else {
 						JOptionPane.showMessageDialog(contentPane, "You can buy maximum 4 type of books at once");
 						dispose();
-						new Cart().setVisible(true);					
+						new Cart(uEmail).setVisible(true);					
 					}
 				}
 				catch (SQLException sqlException) {
@@ -227,6 +241,12 @@ public class Home extends JFrame {
 		panel_7.add(btnNewButton_2_7);
 		
 		JPanel panel_6 = new JPanel();
+		panel_6.addMouseMotionListener(new MouseMotionAdapter() {
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				panel_6.setBorder(new LineBorder(new Color(0, 0, 64), 3));
+			}
+		});
 		panel_6.setLayout(null);
 		panel_6.setToolTipText("REACHER: KILLING FLOOR");
 		panel_6.setBorder(new LineBorder(new Color(250, 250, 210), 3));
@@ -285,9 +305,9 @@ public class Home extends JFrame {
 			            }
 					}
 					else {
-						JOptionPane.showMessageDialog(contentPane, "You can buy maximum 4 type of books at once");
+						JOptionPane.showMessageDialog(contentPane, "You can buy maximum 11 type of books at once");
 						dispose();
-						new Cart().setVisible(true);					
+						new Cart(uEmail).setVisible(true);					
 					}
 				}
 				catch (SQLException sqlException) {
@@ -303,6 +323,12 @@ public class Home extends JFrame {
 		panel_6.add(btnNewButton_2_6);
 		
 		JPanel panel_5 = new JPanel();
+		panel_5.addMouseMotionListener(new MouseMotionAdapter() {
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				panel_5.setBorder(new LineBorder(new Color(255, 128, 0), 3));
+			}
+		});
 		panel_5.setLayout(null);
 		panel_5.setToolTipText("The Immortals of Meluha");
 		panel_5.setBorder(new LineBorder(new Color(250, 250, 210), 3));
@@ -363,7 +389,7 @@ public class Home extends JFrame {
 					else {
 						JOptionPane.showMessageDialog(contentPane, "You can buy maximum 4 type of books at once");
 						dispose();
-						new Cart().setVisible(true);					
+						new Cart(uEmail).setVisible(true);					
 					}
 				}
 				catch (SQLException sqlException) {
@@ -379,6 +405,12 @@ public class Home extends JFrame {
 		panel_5.add(btnNewButton_2_5);
 		
 		JPanel panel_4 = new JPanel();
+		panel_4.addMouseMotionListener(new MouseMotionAdapter() {
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				panel_4.setBorder(new LineBorder(new Color(0, 0, 0), 3));
+			}
+		});
 		panel_4.setLayout(null);
 		panel_4.setToolTipText("A DANCE WITH DRAGONS");
 		panel_4.setBorder(new LineBorder(new Color(250, 250, 210), 3));
@@ -439,7 +471,7 @@ public class Home extends JFrame {
 					else {
 						JOptionPane.showMessageDialog(contentPane, "You can buy maximum 4 type of books at once");
 						dispose();
-						new Cart().setVisible(true);					
+						new Cart(uEmail).setVisible(true);					
 					}
 				}
 				catch (SQLException sqlException) {
@@ -455,6 +487,12 @@ public class Home extends JFrame {
 		panel_4.add(btnNewButton_2_4);
 		
 		JPanel panel_3 = new JPanel();
+		panel_3.addMouseMotionListener(new MouseMotionAdapter() {
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				panel_3.setBorder(new LineBorder(new Color(0, 255, 255), 3));
+			}
+		});
 		panel_3.setLayout(null);
 		panel_3.setToolTipText("RAM: Scion of Ikshvaku");
 		panel_3.setBorder(new LineBorder(new Color(250, 250, 210), 3));
@@ -515,7 +553,7 @@ public class Home extends JFrame {
 					else {
 						JOptionPane.showMessageDialog(contentPane, "You can buy maximum 4 type of books at once");
 						dispose();
-						new Cart().setVisible(true);					
+						new Cart(uEmail).setVisible(true);					
 					}
 				}
 				catch (SQLException sqlException) {
@@ -531,6 +569,12 @@ public class Home extends JFrame {
 		panel_3.add(btnNewButton_2_3);
 		
 		JPanel panel_2_1 = new JPanel();
+		panel_2_1.addMouseMotionListener(new MouseMotionAdapter() {
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				panel_2_1.setBorder(new LineBorder(new Color(128, 0, 128), 3));
+			}
+		});
 		panel_2_1.setLayout(null);
 		panel_2_1.setToolTipText("The Terminal List");
 		panel_2_1.setBorder(new LineBorder(new Color(250, 250, 210), 3));
@@ -591,7 +635,7 @@ public class Home extends JFrame {
 					else {
 						JOptionPane.showMessageDialog(contentPane, "You can buy maximum 4 type of books at once");
 						dispose();
-						new Cart().setVisible(true);					
+						new Cart(uEmail).setVisible(true);					
 					}
 				}
 				catch (SQLException sqlException) {
@@ -607,6 +651,12 @@ public class Home extends JFrame {
 		panel_2_1.add(btnNewButton_2_2_1);
 		
 		JPanel panel_2 = new JPanel();
+		panel_2.addMouseMotionListener(new MouseMotionAdapter() {
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				panel_2.setBorder(new LineBorder(new Color(128, 128, 0), 3));
+			}
+		});
 		panel_2.setLayout(null);
 		panel_2.setToolTipText("The Psychology of Monet");
 		panel_2.setBorder(new LineBorder(new Color(250, 250, 210), 3));
@@ -667,7 +717,7 @@ public class Home extends JFrame {
 					else {
 						JOptionPane.showMessageDialog(contentPane, "You can buy maximum 4 type of books at once");
 						dispose();
-						new Cart().setVisible(true);					
+						new Cart(uEmail).setVisible(true);					
 					}
 				}
 				catch (SQLException sqlException) {
@@ -683,6 +733,12 @@ public class Home extends JFrame {
 		panel_2.add(btnNewButton_2_2);
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.addMouseMotionListener(new MouseMotionAdapter() {
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				panel_1.setBorder(new LineBorder(new Color(128, 128, 128), 3));
+			}
+		});
 		panel_1.setLayout(null);
 		panel_1.setToolTipText("IKIGAI");
 		panel_1.setBorder(new LineBorder(new Color(250, 250, 210), 3));
@@ -743,7 +799,7 @@ public class Home extends JFrame {
 					else {
 						JOptionPane.showMessageDialog(contentPane, "You can buy maximum 4 type of books at once");
 						dispose();
-						new Cart().setVisible(true);					
+						new Cart(uEmail).setVisible(true);					
 					}
 				}
 				catch (SQLException sqlException) {
@@ -759,6 +815,12 @@ public class Home extends JFrame {
 		panel_1.add(btnNewButton_2_1);
 		
 		JPanel panel = new JPanel();
+		panel.addMouseMotionListener(new MouseMotionAdapter() {
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				panel.setBorder(new LineBorder(new Color(0, 0, 128), 3));
+			}
+		});
 		panel.setBorder(new LineBorder(new Color(250, 250, 210), 3));
 		panel.setToolTipText("Think Like A Monk");
 		panel.setBounds(22, 88, 230, 349);
@@ -819,7 +881,7 @@ public class Home extends JFrame {
 					else {
 						JOptionPane.showMessageDialog(contentPane, "You can buy maximum 4 type of books at once");
 						dispose();
-						new Cart().setVisible(true);					
+						new Cart(uEmail).setVisible(true);					
 					}
 				}
 				catch (SQLException sqlException) {
@@ -882,5 +944,21 @@ public class Home extends JFrame {
 		lblNewLabel_1.setBackground(new Color(51, 102, 51));
 		lblNewLabel_1.setBounds(0, 0, 1540, 78);
 		contentPane.add(lblNewLabel_1);
+		
+		contentPane.addMouseMotionListener(new MouseMotionAdapter() {
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				panel.setBorder(new LineBorder(new Color(250, 250, 210), 3));
+				panel_1.setBorder(new LineBorder(new Color(250, 250, 210), 3));
+				panel_2.setBorder(new LineBorder(new Color(250, 250, 210), 3));
+				panel_2_1.setBorder(new LineBorder(new Color(250, 250, 210), 3));
+				panel_3.setBorder(new LineBorder(new Color(250, 250, 210), 3));
+				panel_4.setBorder(new LineBorder(new Color(250, 250, 210), 3));
+				panel_5.setBorder(new LineBorder(new Color(250, 250, 210), 3));
+				panel_6.setBorder(new LineBorder(new Color(250, 250, 210), 3));
+				panel_7.setBorder(new LineBorder(new Color(250, 250, 210), 3));
+				panel_8.setBorder(new LineBorder(new Color(250, 250, 210), 3));
+			}
+		});
 	}
 }

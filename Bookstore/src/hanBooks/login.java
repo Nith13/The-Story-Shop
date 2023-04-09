@@ -41,6 +41,8 @@ public class login extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtEmail;
 	private JPasswordField txtPass;
+	
+	public String uEmail = "";
 
 	/**
 	 * Launch the application.
@@ -115,9 +117,10 @@ public class login extends JFrame {
 	                    pst.setString(2, password);
 	                    ResultSet rs = pst.executeQuery();
 	                    if (rs.next()) {
+	                    	uEmail = rs.getString(1);
 	                        JOptionPane.showMessageDialog(contentPane, "You have successfully logged in");
 	                        dispose();
-	                        new Home().setVisible(true);            	
+	                        new Home(uEmail).setVisible(true);            	
 	                    } else {
 	                        JOptionPane.showMessageDialog(contentPane, "Wrong Username & Password");
 	                        txtEmail.setText("");
